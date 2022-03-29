@@ -1,7 +1,7 @@
 export default [{
   name: `Joe Cotton`,
   skills: {
-    java: 9,
+    Java: 9,
     CSharp: 2,
     React: 4,
     Vue: 6,
@@ -19,7 +19,7 @@ export default [{
 }, {
   name: `Jordan Cotter`,
   skills: {
-    java: 2,
+    Java: 2,
     CSharp: 3,
     React: 9,
     Vue: 9,
@@ -37,7 +37,7 @@ export default [{
 }, {
   name: `Adam Koksal`,
   skills: {
-    java: 4,
+    Java: 4,
     CSharp: 1,
     React: 4,
     Vue: 10,
@@ -55,7 +55,7 @@ export default [{
 }, {
   name: `Bob Vance`,
   skills: {
-    java: 10,
+    Java: 10,
     CSharp: 3,
     React: 5,
     Vue: 7,
@@ -73,7 +73,7 @@ export default [{
 }, {
   name: `Stephen Pace`,
   skills: {
-    java: 9,
+    Java: 9,
     CSharp: 5,
     React: 9,
     Vue: 8,
@@ -91,7 +91,7 @@ export default [{
 }, {
   name: `Rod Johnson`,
   skills: {
-    java: 6,
+    Java: 6,
     CSharp: 10,
     React: 2,
     Vue: 6,
@@ -109,7 +109,7 @@ export default [{
 }, {
   name: `John Galt`,
   skills: {
-    java: 10,
+    Java: 10,
     CSharp: 10,
     React: 10,
     Vue: 10,
@@ -127,7 +127,7 @@ export default [{
 }, {
   name: `Marcus Cantu`,
   skills: {
-    java: 8,
+    Java: 8,
     CSharp: 4,
     React: 6,
     Vue: 5,
