@@ -50,7 +50,7 @@ export const App: React.FC<any> = (): JSX.Element => {
   const [filters, setFilters] = React.useState([blankFilter])
 
   useEffect(() => {
-    fetch(`http://localhost:4000/resources`)
+    fetch(`https://kahoa-resource-server-prototype.onrender.com/resources`)
       .then(r => r.json())
       .then(res => {
         const otherKey = "Other Languages I Have Skill In (include your skill rating)"
@@ -203,8 +203,8 @@ export const App: React.FC<any> = (): JSX.Element => {
                   if (!filter.skill) return true
                   if (!filter.level) return true
                   return filter.qualifier === `At or Above`
-                    ? x.skills[filter.skill] >= filter.level
-                    : x.skills[filter.skill] <= filter.level
+                    ? Number(x.skills[filter.skill]) >= filter.level
+                    : Number(x.skills[filter.skill]) <= filter.level
                 }, true)
               }).map(x => (
                 <Tr className={getClass(x)} onClick={_ => {
