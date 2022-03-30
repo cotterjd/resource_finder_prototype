@@ -281,7 +281,7 @@ export const App: React.FC<any> = (): JSX.Element => {
               <Tr>
                 <Th>Skill</Th>
                 <Th>
-                  Rating 
+                  Rating &nbsp; 
                   <Popover>
   <PopoverTrigger>
     <span className="info clickable">?</span>
