@@ -21,6 +21,15 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import './App.css'
@@ -271,9 +280,35 @@ export const App: React.FC<any> = (): JSX.Element => {
             <Thead>
               <Tr>
                 <Th>Skill</Th>
-                <Th>Rating</Th>
-              </Tr>
-            </Thead>
+                <Th>
+                  Rating 
+                  <Popover>
+  <PopoverTrigger>
+    <span className="info clickable">?</span>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverHeader>Ratings are based on the following scale</PopoverHeader>
+    <PopoverBody>
+      <ol style={{ paddingLeft: `10px` }}>
+        <li>No Experience</li>
+        <li>Reviewed code in this language once or twice</li>
+        <li>Played around in the code before but not professionally</li>
+        <li>I've committed code in this language before</li>
+        <li>I've helped deliver a project in this language</li>
+        <li>I can contribute to any project in this language</li>
+        <li>I can develop a project by myself in this language</li>
+        <li>I can lead a team in this language</li>
+        <li>I can solve complex problems and deliver enterprise quality software in this language </li>
+        <li>God(dess)-Like</li> 
+      </ol>                                                                               
+    </PopoverBody>                                                                        
+  </PopoverContent>                                                                       
+</Popover>                                                                                
+                </Th>                                                                     
+              </Tr>                                                                       
+            </Thead>                                                                      
             <Tbody>
               {
                 Object.keys(dev.skills).map((k, i) => (
