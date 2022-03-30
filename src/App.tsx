@@ -21,14 +21,12 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Spacer,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import './App.css'
 import add from 'date-fns/add'
 // import data from 'resources'
 // import getData from './utils'
-import { useEffect } from "react"
 
 const blankFilter = { skill: ``, qualifier: `At or Above`, level: 0 }
 const getClass = dev => {
@@ -42,6 +40,7 @@ const getClass = dev => {
 }
 export const App: React.FC<any> = (): JSX.Element => {
   const [data, setData] = React.useState([])
+  const [devs, setDevs] = React.useState([])
   const [skills, setSkills] = React.useState([])
   const [project, setProject] = React.useState(``)
   const [isProjectModalOpen, setIsProjectModalOpen] = React.useState(false)
@@ -49,7 +48,21 @@ export const App: React.FC<any> = (): JSX.Element => {
   const [isDevModalOpen, setIsDevModalOpen] = React.useState(false)
   const [filters, setFilters] = React.useState([blankFilter])
 
-  useEffect(() => {
+  React.useEffect(() => {
+    setDevs(data.filter(x => {
+        if (filters.length === 0) return true
+        return filters.reduce((bool, filter) => {
+          if (!bool) return bool
+          if (!filter.skill) return true
+          if (!filter.level) return true
+          return filter.qualifier === `At or Above`
+            ? Number(x.skills[filter.skill]) >= filter.level
+            : Number(x.skills[filter.skill]) <= filter.level
+        }, true)
+      }))
+  }, [data, filters])
+
+  React.useEffect(() => {
     fetch(`https://kahoa-resource-server-prototype.onrender.com/resources`)
       .then(r => r.json())
       .then(res => {
@@ -186,6 +199,7 @@ export const App: React.FC<any> = (): JSX.Element => {
             }}
           >Clear Filters</Button>
         </Flex>
+        <span>{devs.length} Results</span>
         <Table colorScheme='teal'>
           <Thead>
             <Tr>
@@ -196,17 +210,7 @@ export const App: React.FC<any> = (): JSX.Element => {
           </Thead>
           <Tbody>
             {
-              data.filter(x => {
-                if (filters.length === 0) return true
-                return filters.reduce((bool, filter) => {
-                  if (!bool) return bool
-                  if (!filter.skill) return true
-                  if (!filter.level) return true
-                  return filter.qualifier === `At or Above`
-                    ? Number(x.skills[filter.skill]) >= filter.level
-                    : Number(x.skills[filter.skill]) <= filter.level
-                }, true)
-              }).map(x => (
+              devs.map(x => (
                 <Tr className={getClass(x)} onClick={_ => {
                   setDev(x)
                   setIsDevModalOpen(true)
