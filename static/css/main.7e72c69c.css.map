@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.7e72c69c.css","mappings":"AAAA,WACE,kCACF,CACA,QACE,mCACF,CAEA,WACE,cACF","sources":["App.css"],"sourcesContent":[".available {\n  background-color: rgb(27, 94, 32, 0.4);\n}\n.almost {\n  background-color: rgb(255, 255, 0, 0.4);\n}\n\n.clickable {\n  cursor: pointer;\n}"],"names":[],"sourceRoot":""}

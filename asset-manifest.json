@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cotterjd.github.io/resource_finder_prototype/static/css/main.7e72c69c.css",
+    "main.js": "/cotterjd.github.io/resource_finder_prototype/static/js/main.c81761c6.js",
+    "static/js/377.94749cad.chunk.js": "/cotterjd.github.io/resource_finder_prototype/static/js/377.94749cad.chunk.js",
+    "index.html": "/cotterjd.github.io/resource_finder_prototype/index.html",
+    "main.7e72c69c.css.map": "/cotterjd.github.io/resource_finder_prototype/static/css/main.7e72c69c.css.map",
+    "main.c81761c6.js.map": "/cotterjd.github.io/resource_finder_prototype/static/js/main.c81761c6.js.map",
+    "377.94749cad.chunk.js.map": "/cotterjd.github.io/resource_finder_prototype/static/js/377.94749cad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e72c69c.css",
+    "static/js/main.c81761c6.js"
+  ]
+}
